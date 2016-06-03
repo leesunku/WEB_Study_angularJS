@@ -1,1 +1,1 @@
-# WEB_Study_angularJS
+# angularJS 공부합니다.
