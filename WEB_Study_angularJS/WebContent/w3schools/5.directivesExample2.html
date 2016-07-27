@@ -10,9 +10,10 @@
 <h1>AngularJS Example</h1>
 <h3>Data Binding</h3>
 <XMP>
-<div ng-app="" ng-init="firstName='john'">
-	<p>Name : <input type="text" ng-model="firstName"></p>
-	<p>You wrote : {{ firstName }}</p>
+<div ng-app="" ng-init="quantity=1; price=5">
+Quantity : <input type="number" ng-model="quantity">
+Costs : <input type="number" ng-model="price">
+Total in dollar : {{ quantity * price }}
 </div>
 </XMP>
 <div ng-app="" ng-init="quantity=1; price=5">
@@ -21,9 +22,9 @@ Costs : <input type="number" ng-model="price">
 Total in dollar : {{ quantity * price }}
 </div>
 예제 설명 : <br>
-firstName 표현은, 
+ng-init를 사용하는 것은 매우 일반적이지 않다. 컨트롤러 챕터에서 데이터 초기화를 배운다고 한다.
 <br>
-<a href="5.directives.html">이전</a>
-<a href="5.directivesExample2.html">다음</a>
+<a href="5.directivesExample.html">이전</a>
+<a href="5.directivesExample3.html">다음</a>
 </body>
 </html> 
