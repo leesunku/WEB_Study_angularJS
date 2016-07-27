@@ -15,7 +15,7 @@
 </div>
 <script type="text/javascript">
 	var app = angular.module("myApp", []);
-	app.controller("myCtrl", function(){
+	app.controller("myCtrl", function($scope){
 		$scope.firstName = "lee";
 		$scope.lastName = "sunku";
 	});
@@ -26,11 +26,12 @@
 </div>
 <script type="text/javascript">
 	var app = angular.module("myApp", []);
-	app.controller("myCtrl", function(){
+	app.controller("myCtrl", function($scope){
 		$scope.firstName = "lee";
 		$scope.lastName = "sunku";
 	});
 </script>
+
 예제 설명 :<br>
 ng-controller는 컨트롤러를 의미한다.
 <br>
