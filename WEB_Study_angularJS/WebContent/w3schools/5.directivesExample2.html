@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- <script src="../WEB-INF/lib/angular.min.js"></script> -->
+</head>
+<body>
+<h1>AngularJS Example</h1>
+<h3>Data Binding</h3>
+<XMP>
+<div ng-app="" ng-init="firstName='john'">
+	<p>Name : <input type="text" ng-model="firstName"></p>
+	<p>You wrote : {{ firstName }}</p>
+</div>
+</XMP>
+<div ng-app="" ng-init="quantity=1; price=5">
+Quantity : <input type="number" ng-model="quantity">
+Costs : <input type="number" ng-model="price">
+Total in dollar : {{ quantity * price }}
+</div>
+예제 설명 : <br>
+firstName 표현은, 
+<br>
+<a href="5.directives.html">이전</a>
+<a href="5.directivesExample2.html">다음</a>
+</body>
+</html> 
