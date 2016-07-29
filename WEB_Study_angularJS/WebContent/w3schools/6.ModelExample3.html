@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- <script src="../WEB-INF/lib/angular.min.js"></script> -->
+</head>
+<body>
+<h1>AngularJS Example</h1>
+<h3>Validate User Input</h3>
+<XMP>
+<form ng-app="" name="myForm">
+	Email:
+	<input type="email" name="myAddress" ng-model="text">
+	<span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+</form>
+</XMP>
+<form ng-app="" name="myForm">
+	Email:
+	<input type="email" name="myAddress" ng-model="text">
+	<span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+</form>
+예제 설명 :<br>
+ng-model directive 는 어플리케이션 데이터로부터 타입체크를 제공해준다.(숫자, 이메일, 리콰이어드)<br>
+ng-show의 속성이 true가 된다면, span의 내용을 보여준다.
+<br>
+<a href="6.ModelExample2.html">이전</a>
+<a href="6.ModelExample4.html">다음</a>
+</body>
+</html> 
