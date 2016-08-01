@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- <script src="../WEB-INF/lib/angular.min.js"></script> -->
+</head>
+<body>
+<h1>AngularJS Example</h1>
+<h3>Root Scope</h3>
+<xmp>
+
+</xmp>
+<p>The rootScope's favorite color : </p>
+<h1>{{color}}</h1>
+<div ng-controller="myCtrl">
+	<p>The scope of the controller's favorite color : </p>
+	<h1>{{color}}</h1>
+</div>
+
+<p>The rootScope's favorite color is still : </p>
+<h1>{{color}}</h1>
+<script type="text/javascript">
+var app = angular.module('myApp', []);
+app.run(function($rootScope){
+	$rootScope.color = 'blue';
+});
+app.controller('myCtrl', function($scope){
+	$scope.color = "red";
+});
+</script>
+예제 설명 :<br>
+언제든지, scope를 중요하게 취급해야 합니다.<br>
+ng-repeat directive는 반복되는 객체를 흐름을 엑세스 한다.
+
+<br>
+<a href="9.scopeExample3.html">이전</a>
+<a href="9.scopeExample5.html">다음</a>
+</body>
+</html> 

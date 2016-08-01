@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- <script src="../WEB-INF/lib/angular.min.js"></script> -->
+</head>
+<body>
+<h1>AngularJS Example</h1>
+<h3>Another Example</h3>
+<xmp>
+<div ng-app="myApp" ng-controller="namesCtrl">
+	<ul>
+		<li ng-repeat="x in names">
+			{{ x.name + ', ' + x.country }}
+	</ul>
+</div>
+<script src="controller/namesController.js"></script>
+angular.module('myApp', []).controller('namesCtrl', function($scope) {
+    $scope.names = [
+        {name:'Jani',country:'Norway'},
+        {name:'Hege',country:'Sweden'},
+        {name:'Kai',country:'Denmark'}
+    ];
+});
+</xmp>
+<div ng-app="myApp" ng-controller="namesCtrl">
+	<ul>
+		<li ng-repeat="x in names">
+			{{ x.name + ', ' + x.country }}
+	</ul>
+</div>
+<script src="controller/namesController.js"></script>
+예제 설명 :<br>
+큰 어플리케이션은 일반적으로 외부 파일을 만들어, 컨트롤러들을 저장한다.<br>
+
+
+<br>
+<a href="8.controllersExample3.html">이전</a>
+<a href="9.scope.html">다음</a>
+</body>
+</html> 

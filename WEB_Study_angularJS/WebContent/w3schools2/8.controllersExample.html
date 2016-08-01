@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- <script src="../WEB-INF/lib/angular.min.js"></script> -->
+</head>
+<body>
+<h1>AngularJS Example</h1>
+<h3>AngularJS Controllers</h3>
+<xmp>
+	<div ng-app="myApp" ng-controller="myCtrl">
+
+	First Name : <input type="text" ng-model="firstName"><br>
+	Last Name : <input type="text" ng-model="lastName"><br>
+	<br>
+	Full Name : {{firstName + " " + lastName }}
+	</div>
+	<script type="text/javascript">
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope){
+			$scope.firstName = "John";
+			$scope.lastName = "Doe";
+		});
+	</script>
+</xmp>
+<div ng-app="myApp" ng-controller="myCtrl">
+
+First Name : <input type="text" ng-model="firstName"><br>
+Last Name : <input type="text" ng-model="lastName"><br>
+<br>
+Full Name : {{firstName + " " + lastName }}
+</div>
+<script type="text/javascript">
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope){
+		$scope.firstName = "John";
+		$scope.lastName = "Doe";
+	});
+</script>
+예제 설명 :<br>
+앙귤라 어플리케이션은 controllers로 제어한다.<br>
+ng-controller directive는 어플리케이션 컨트롤러라 정의한다.<br>
+컨트롤러는 자바스크립트 오브젝트이다. 자바스크립트 오브젝트 표준으로 생성된다.<br>
+
+앙귤라 어플리케이션은 ng-app="myApp 처럼 정의한다. 그 어플리케이션은 <,div>에서 실행된다.<br>
+ng-controller="myCtrl" 속성은 앙귤라 directive이다. 컨트롤러를 의미한다. <br>
+myCtrl 함수는 자바스크립트 함수이다.<br>
+앙귤라는 컨트롤러의 $scope 오브젝트를 호출할 것이다.<br>
+앙귤라에서 $scope는 어플리케이션 오브젝트이다.(어플리케이션 변수와 함수)<br>
+컨트롤러로 scope를 생성한타
+ng-model directive는 컨트롤러의 프로퍼티스에 input 필드를 바인딩한다.
+<br>
+<a href="8.controllers.html">이전</a>
+<a href="8.controllersExample2.html">다음</a>
+</body>
+</html> 

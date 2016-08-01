@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- <script src="../WEB-INF/lib/angular.min.js"></script> -->
+</head>
+<body>
+<h1>AngularJS Example</h1>
+<h3>Controller Methods</h3>
+<xmp>
+	<div ng-app="myApp" ng-controller="personCtrl">
+		First Name : <input type="text" ng-model="firstName"><br>
+		Last Name : <input type="text" ng-model="lastName"><br>
+		<br>
+		Full Name : {{fullName()}}
+	</div>
+	<script type="text/javascript">
+		var app = angular.module('myApp', []);
+		app.controller('personCtrl', function($scope){
+			$scope.firstName = "John";
+			$scope.lastName = "Doe";
+			$scope.fullName = function(){
+				return $scope.firstName + " " + $scope.lastName;
+			}
+		});
+	</script>
+</xmp>
+	<div ng-app="myApp" ng-controller="personCtrl">
+		First Name : <input type="text" ng-model="firstName"><br>
+		Last Name : <input type="text" ng-model="lastName"><br>
+		<br>
+		Full Name : {{fullName()}}
+	</div>
+	<script type="text/javascript">
+		var app = angular.module('myApp', []);
+		app.controller('personCtrl', function($scope){
+			$scope.firstName = "John";
+			$scope.lastName = "Doe";
+			$scope.fullName = function(){
+				return $scope.firstName + " " + $scope.lastName;
+			}
+		});
+	</script>
+	
+예제 설명 :<br>
+
+<br>
+<a href="8.controllersExample.html">이전</a>
+<a href="8.controllersExample3.html">다음</a>
+</body>
+</html> 
