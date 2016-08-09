@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- <script src="../WEB-INF/lib/angular.min.js"></script> -->
+</head>
+<body>
+<h1>AngularJS Example</h1>
+<h3>Data Model</h3>
+앙귤라 어플리케이션은 보통 데이터 모델을 가지고 있다.
+<XMP>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+	$scope.firstName = "John";
+	$scope.lastName = "John";
+});
+</XMP>
+
+<br>
+<a href="10.filters.html">이전</a>
+<a href="10.filtersExample2.html">다음</a>
+</body>
+</html> 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- <script src="../WEB-INF/lib/angular.min.js"></script> -->
+</head>
+<body>
+<h1>AngularJS Example</h1>
+<h3>Two-way Binding</h3>
+<xmp>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		Name : <input ng-model="firstName">
+		<h1>{{ firstName }}</h1>
+	</div>
+	<script type="text/javascript">
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope){
+		$scope.firstName = "John";
+		$scope.lastName = "Doe";
+	});
+	</script>
+</xmp>
+<div ng-app="myApp" ng-controller="myCtrl">
+	Name : <input ng-model="firstName">
+	<h1>{{ firstName }}</h1>
+</div>
+<script type="text/javascript">
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope){
+	$scope.firstName = "John";
+	$scope.lastName = "Doe";
+});
+</script>
+예제 설명 :<br>
+모델이 변경될 떄, 뷰가 변경되어 반영된다. 그리고 뷰가 변경되면 모델도 업데이트 된다.<br>
+어떤 모델과 뷰가 업데이트 되었는지 자동적으로 바로 확인합니다.
+<br>
+<a href="7.dataBindingExample3.html">이전</a>
+<a href="7.dataBindingExample5.html">다음</a>
+</body>
+</html> 

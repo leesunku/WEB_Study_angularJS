@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- <script src="../WEB-INF/lib/angular.min.js"></script> -->
+</head>
+<body ng-app="myApp">
+<h1>AngularJS Example</h1>
+<h3>Create New Directives</h3>
+<XMP>
+<body ng-app="myApp">
+
+<w3-test-directive></w3-test-directive>
+
+<script>
+var app = angular.module("myApp", []);
+app.directive("w3TestDirective", function() {
+    return {
+        template : "<h1>Made by a directive!</h1>"
+    };
+});
+</script>
+
+</body>
+</XMP>
+<sk-directive></sk-directive>
+
+<script type="text/javascript">
+	var app = angular.module("myApp", []);
+	
+	app.directive("skDirective", function(){
+		return {
+			template : "<h1>Made by a directive!</h1>"
+		}
+	});
+</script>
+예제 설명 : <br>
+<br>
+<a href="5.directivesExample4.html">이전</a>
+<a href="6.Model.html">다음</a>
+</body>
+</html> 

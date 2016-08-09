@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- <script src="../WEB-INF/lib/angular.min.js"></script> -->
+</head>
+<body>
+<h1>AngularJS Example</h1>
+<h3>AngularJS Directives</h3>
+앙귤라 directives는 html 속성에 ng-접두사에 의해서 확장한다.<br>
+ng-app directive는 앙귤라 어플리케이션을 초기화한다.<br>
+ng-init directive는 어플리케이션 데이터를 초기화한다.<br>
+ng-model directive는 값과 html 컨트롤러(input, select, textarea)를 어플리케이션 데이터에 바인딩한다.<br>
+<XMP>
+<div ng-app="" ng-init="firstName='john'">
+	<p>Name : <input type="text" ng-model="firstName"></p>
+	<p>You wrote : {{ firstName }}</p>
+</div>
+</XMP>
+<div ng-app="" ng-init="firstName='john'">
+	<p>Name : <input type="text" ng-model="firstName"></p>
+	<p>You wrote : {{ firstName }}</p>
+</div>
+예제 설명 : <br>
+<br>
+<a href="5.directives.html">이전</a>
+<a href="5.directivesExample2.html">다음</a>
+</body>
+</html> 

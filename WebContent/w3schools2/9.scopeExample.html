@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- <script src="../WEB-INF/lib/angular.min.js"></script> -->
+</head>
+<body>
+<h1>AngularJS Example</h1>
+<h3>How to Use the Scope?</h3>
+<xmp>
+<div ng-app="myApp" ng-controller="myCtrl">
+	<h1>{{carname}}</h1>
+</div>
+<script>
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope){
+		$scope.carname = "Volvo";
+	});
+</script>
+</xmp>
+<div ng-app="myApp" ng-controller="myCtrl">
+	<h1>{{carname}}</h1>
+</div>
+<script>
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope){
+		$scope.carname = "Volvo";
+	});
+</script>
+예제 설명 :<br>
+컨트롤러의 $scope 오브젝트에 프로퍼티를 추가한다. view(html)의 엑세스를 얻는다.<br>
+뷰에서는 $scope 접두사를 사용하지 않는다. '{{carname}}' 처럼 프로퍼티 네임을 사용한다.
+<br>
+<a href="9.scope.html">이전</a>
+<a href="9.scopeExample2.html">다음</a>
+</body>
+</html> 

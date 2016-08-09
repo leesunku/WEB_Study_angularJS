@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- <script src="../WEB-INF/lib/angular.min.js"></script> -->
+</head>
+<body>
+<h1>AngularJS Example</h1>
+<h3>Adding a Directive</h3>
+<XMP>
+<div ng-app="myApp" sk-directive></div>
+<script type="text/javascript">
+var app = angular.module("myApp", []);
+app.directive("skDirective", function(){
+	return {
+		template : "I was made in a directive constructor!"
+	}
+})
+</script>
+</XMP>
+<div ng-app="myApp" sk-directive></div>
+<script type="text/javascript">
+var app = angular.module("myApp", []);
+app.directive("skDirective", function(){
+	return {
+		template : "I was made in a directive constructor!"
+	}
+})
+</script>
+예제 설명 :<br>
+앙귤라는 어플리케이션에 사용할 함수를 추가할 수 있다.<br>
+어플리케이션에 표현식을 모듈에 추가해 사용할 수 있다.
+<br>
+<a href="4.modulesExample2.html">이전</a>
+<a href="4.modulesExample4.html">다음</a>
+</body>
+</html> 
