@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
@@ -12,91 +11,41 @@
 <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
 <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc.5/angular-material.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc.5/angular-material.css">
-<link rel="stylesheet" type="text/css" href="https://material.angularjs.org/1.1.0-rc.5/docs.css">
+
 <script type="text/javascript">
-angular.module('MyApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache']).controller('AppCtrl', function($scope) {
-  $scope.myDate = new Date();
-
-  $scope.minDate = new Date(
-      $scope.myDate.getFullYear(),
-      $scope.myDate.getMonth() - 2,
-      $scope.myDate.getDate());
-
-  $scope.maxDate = new Date(
-      $scope.myDate.getFullYear(),
-      $scope.myDate.getMonth() + 2,
-      $scope.myDate.getDate());
-  
-  $scope.onlyWeekendsPredicate = function(date) {
-    var day = date.getDay();
-    return day === 0 || day === 6;
-  }
+angular.module('datepickerApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache']).controller('datepickerCtrl', function($scope) {
+	$scope.dateRange = 7;
+    $scope.endDate = new Date();
+    
+	$scope.startDate = new Date(
+		$scope.endDate.getFullYear(),
+		$scope.endDate.getMonth(),
+		$scope.endDate.getDate()-$scope.dateRange
+	);
+	
+    $scope.dateRangeChange = function(range){
+    	$scope.dateRange = range;
+    	
+    	$scope.endDate = new Date();
+    	$scope.startDate = new Date(
+			$scope.endDate.getFullYear(),
+			$scope.endDate.getMonth(),
+			$scope.endDate.getDate()-$scope.dateRange
+    	);
+    };
 });
 
-
-/**
-Copyright 2016 Google Inc. All Rights Reserved. 
-Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
-**/
 </script>
-<style type="text/css">
-.datepickerdemoBasicUsage {
-  /** Demo styles for mdCalendar. */ }
-  .datepickerdemoBasicUsage md-content {
-    padding-bottom: 200px; }
-  .datepickerdemoBasicUsage .validation-messages {
-    font-size: 12px;
-    color: #dd2c00;
-    margin: 10px 0 0 25px; }
 
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved. 
-Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
-*/
-</style>
 </head>
 <body>
-<div ng-controller="AppCtrl" style="padding: 40px;" ng-cloak="" class="datepickerdemoBasicUsage" ng-app="MyApp">
-  <md-content>
-
-    <h4>Standard date-picker</h4>
-    <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
-
-    <h4>Disabled date-picker</h4>
-    <md-datepicker ng-model="myDate" md-placeholder="Enter date" disabled=""></md-datepicker>
-
-    <h4>Date-picker with min date and max date</h4>
-    <md-datepicker ng-model="myDate" md-placeholder="Enter date" md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
-
-    <h4>Only weekends are selectable</h4>
-    <md-datepicker ng-model="myDate" md-placeholder="Enter date" md-date-filter="onlyWeekendsPredicate"></md-datepicker>
-
-    <h4>Only weekends within given range are selectable</h4>
-    <md-datepicker ng-model="myDate" md-placeholder="Enter date" md-min-date="minDate" md-max-date="maxDate" md-date-filter="onlyWeekendsPredicate"></md-datepicker>
-
-    <h4>Opening the calendar when the input is focused</h4>
-    <md-datepicker ng-model="myDate" md-placeholder="Enter date" md-open-on-focus=""></md-datepicker>
-
-    <h4>With ngMessages</h4>
-    <form name="myForm">
-      <md-datepicker name="dateField" ng-model="myDate" md-placeholder="Enter date" required="" md-min-date="minDate" md-max-date="maxDate" md-date-filter="onlyWeekendsPredicate"></md-datepicker>
-
-      <div class="validation-messages" ng-messages="myForm.dateField.$error">
-        <div ng-message="valid">The entered value is not a date!</div>
-        <div ng-message="required">This date is required!</div>
-        <div ng-message="mindate">Date is too early!</div>
-        <div ng-message="maxdate">Date is too late!</div>
-        <div ng-message="filtered">Only weekends are allowed!</div>
-      </div>
-    </form>
-
-  </md-content>
+<div ng-controller="datepickerCtrl" style="padding: 40px;" ng-cloak="" class="datepickerdemoBasicUsage" ng-app="datepickerApp">
+    <md-datepicker ng-model="startDate" md-placeholder="Enter date" md-max-date="endDate"></md-datepicker>
+    <md-datepicker ng-model="endDate" md-placeholder="Enter date" md-min-date="startDate"></md-datepicker>
+    <br> <br>
+	<a href="#" ng-click="dateRangeChange('7')">최근 1주일</a> <br>
+	<a href="#" ng-click="dateRangeChange('30')">최근 1개월</a> <br>
+	<a href="#" ng-click="dateRangeChange('365')">최근 1년</a>
 </div>
-
-<!--
-Copyright 2016 Google Inc. All Rights Reserved. 
-Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
--->
 </body>
 </html>
