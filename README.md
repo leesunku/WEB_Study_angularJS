@@ -17,6 +17,7 @@
 
 예제 url - http://leeskhome.iptime.org:8080/WEB_Study_angularJS/w3schools/1.home.html
 예제 url은 서버상황에 따라 접속이 불가할 수 있다.
+
 ## 2016 - 08 - 10
 #### 휴가 다녀오고 정신없이 밀린 업무를 했다.
 #### 사내 프로젝트의 경우, 특성상 datepicker를 사용하는데, 이전 프로젝트까지는 j쿼리를 사용해서 그냥 가져다 썼지만,
@@ -26,3 +27,7 @@
 #### 켈린더(달력) 라이브러리?모듈?이다.
 
 datepicker 예제 url - http://leeskhome.iptime.org:8080/WEB_Study_angularJS/angularDatepicker/datepicker.html
+
+
+## 2016 - 08 - 11
+#### 개발하다가, 앵귤러의 기본적인부분을 너무 몰라 다시 w3schools 예제를 시작한다.
