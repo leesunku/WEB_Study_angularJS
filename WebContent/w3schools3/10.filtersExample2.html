@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- <script src="../WEB-INF/lib/angular.min.js"></script> -->
+</head>
+<body>
+<h1>AngularJS Example</h1>
+<h3>Adding Filters to Expressions</h3>
+filters는 '|'로 표현할 수 있다.
+<XMP>
+<div ng-app="myApp" ng-controller="personCtrl">
+	<p>The name is {{ lastName | lowercase }}</p>
+</div>
+<script>
+	angular.module('myApp', []).controller('personCtrl', function($scope) {
+	    $scope.firstName = "John",
+	    $scope.lastName = "Doe"
+	});
+</script>
+</XMP>
+<div ng-app="myApp" ng-controller="personCtrl">
+	<p> The name is {{ lastName | lowercase }} </p>
+</div>
+<script>
+	angular.module('myApp', []).controller('personCtrl', function($scope) {
+	    $scope.firstName = "John",
+	    $scope.lastName = "Doe"
+	});
+</script>
+예제 설명 :<br>
+uppercase는 문자열을 대문자로 변환해준다.
+<br>
+<a href="10.filtersExample.html">이전</a>
+<a href="10.filtersExample3.html">다음</a>
+</body>
+</html> 

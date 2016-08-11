@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- <script src="../WEB-INF/lib/angular.min.js"></script> -->
+</head>
+<body>
+<h1>AngularJS Example</h1>
+<h3>Custom Filters</h3>
+<XMP>
+<div ng-app="skApp" ng-controller="skCtrl">
+	<p> 글자 입력 : </p> <input type="text" ng-model="test">
+	<ul>
+		<li ng-repeat = "x in names | filter:test">
+			{{ x }}
+		</li>
+	</ul>
+</div>
+<script type="text/javascript">
+angular.module('skApp', []).controller('skCtrl', function($scope){
+	$scope.names = [
+					'이선구',
+					'홍길동',
+					'전우치',
+					'이순신',
+					'세종대왕',
+					'유관순'
+	                ];
+});
+</script>
+</XMP>
+<ul ng-app="myApp" ng-controller="namesCtrl">
+	<li ng-repeat = "x in names">
+		{{x | myFormat}}
+	</li>
+</ul>
+
+<script type="text/javascript">
+var app = angular.module('myApp',[]);
+app.filter('myFormat', function(){
+	return function(x){
+		var i, c, txt = "";
+		for(i = 0; i < x.length; i++){
+			c = x[i];
+			if(i % 2 == 0){
+				c = c.toUpperCase();
+			}
+			txt += c;
+		}
+		return txt;
+	};
+});
+app.controller('namesCtrl', function($scope) {
+    $scope.names = ['Jani', 'Carl', 'Margareth', 'Hege', 'Joe', 'Gustav', 'Birgit', 'Mary', 'Kai'];
+});
+</script>
+예제 설명 :<br>
+테이블 헤더에 ng-click을 추가해서, 배열의 정렬 기준을 변경할 수 있다. 
+<br>
+<a href="10.filtersExample7.html">이전</a>
+<a href="11.services.html">다음</a>
+</body>
+</html> 

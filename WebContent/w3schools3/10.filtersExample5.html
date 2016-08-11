@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- <script src="../WEB-INF/lib/angular.min.js"></script> -->
+</head>
+<body>
+<h1>AngularJS Example</h1>
+<h3>The filter Filter</h3>
+<XMP>
+<div ng-app="myApp" ng-controller="namesCtrl">
+	<ul>
+		<li ng-repeat="x in names | filter : '1'">
+			{{x}}
+		</li>
+	</ul>
+</div>
+<script type="text/javascript">
+	angular.module('myApp', []).controller('namesCtrl', function($scope){
+		$scope.names = [
+	        'Jani',
+	        'Carl',
+	        'Margareth',
+	        'Hege',
+	        'Joe',
+	        'Gustav',
+	        'Birgit',
+	        'Mary',
+	        'Kai'
+	    ];
+	});
+</script>
+</XMP>
+<div ng-app="myApp" ng-controller="namesCtrl">
+	<ul>
+		<li ng-repeat="x in names | filter : 'i'">
+			{{x}}
+		</li>
+	</ul>
+</div>
+<script type="text/javascript">
+	angular.module('myApp', []).controller('namesCtrl', function($scope){
+		$scope.names = [
+	        'Jani',
+	        'Carl',
+	        'Margareth',
+	        'Hege',
+	        'Joe',
+	        'Gustav',
+	        'Birgit',
+	        'Mary',
+	        'Kai'
+	    ];
+	});
+</script>
+<p> 이 예제는 'i'를 가지고 있는 이름들만 보여준다.</p>
+예제 설명 :<br>
+filter는 배열의 서브셋을 선택할 수 있다.
+filter는 오직 배열에서 사용할 수 있다. 그리고 배열에 들어있는 요소를 리턴할 수 있다.
+<br>
+<a href="10.filtersExample4.html">이전</a>
+<a href="10.filtersExample6.html">다음</a>
+</body>
+</html> 

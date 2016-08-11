@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- <script src="../WEB-INF/lib/angular.min.js"></script> -->
+</head>
+<body>
+<h1>AngularJS Example</h1>
+<h3>Adding Filters to Directives</h3>
+<XMP>
+<div ng-app="myApp" ng-controller="namesCtrl">
+<p>Looping with objects:</p>
+<ul>
+	<li ng-repeat="x in names | orderBy:'country'">
+	 {{ x.name + ', ' + x.country }}
+</ul>
+</div>
+<script type="text/javascript">
+angular.module('myApp', []).controller('namesCtrl', function($scope){
+	$scope.names = [
+		                {name:'Jani',country:'Norway'},
+				        {name:'Carl',country:'Sweden'},
+				        {name:'Margareth',country:'England'},
+				        {name:'Hege',country:'Norway'},
+				        {name:'Joe',country:'Denmark'},
+				        {name:'Gustav',country:'Sweden'},
+				        {name:'Birgit',country:'Denmark'},
+				        {name:'Mary',country:'England'},
+				        {name:'Kai',country:'Norway'}
+	                ];
+});
+</script>
+</XMP>
+<div ng-app="myApp" ng-controller="namesCtrl">
+<p>Looping with objects:</p>
+<ul>
+	<li ng-repeat="x in names | orderBy:'country'">
+	 {{ x.name + ', ' + x.country }}
+</ul>
+</div>
+<script type="text/javascript">
+angular.module('myApp', []).controller('namesCtrl', function($scope){
+	$scope.names = [
+		                {name:'Jani',country:'Norway'},
+				        {name:'Carl',country:'Sweden'},
+				        {name:'Margareth',country:'England'},
+				        {name:'Hege',country:'Norway'},
+				        {name:'Joe',country:'Denmark'},
+				        {name:'Gustav',country:'Sweden'},
+				        {name:'Birgit',country:'Denmark'},
+				        {name:'Mary',country:'England'},
+				        {name:'Kai',country:'Norway'}
+	                ];
+});
+</script>
+예제 설명 :<br>
+filters는 ng-repeat에 '|'를 사용하여 directives에 추가한다. 
+<br>
+<a href="10.filtersExample2.html">이전</a>
+<a href="10.filtersExample4.html">다음</a>
+</body>
+</html> 

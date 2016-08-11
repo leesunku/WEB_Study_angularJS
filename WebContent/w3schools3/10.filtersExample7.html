@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- <script src="../WEB-INF/lib/angular.min.js"></script> -->
+</head>
+<body>
+<h1>AngularJS Example</h1>
+<h3>Sort an Array Based on User Input</h3>
+<XMP>
+<div ng-app="myApp" ng-controller="nameCtrl">
+	<table border="1" width="100%">
+		<tr>
+			<th ng-click = "orderByMe('name')">Name - click(Name 정렬) </th>
+			<th ng-click = "orderByMe('country')">Country - click(Country 정렬) </th>
+		</tr>
+		<tr ng-repeat=" x in names | orderBy:myOrderBy">
+			<td>{{x.name}}</td>
+			<td>{{x.country}}</td>
+		</tr>
+	</table>
+</div>
+<script type="text/javascript">
+	angular.module('myApp', []).controller('nameCtrl', function($scope){
+		$scope.names =[
+					    {name:'Jani',country:'Norway'},
+					    {name:'Carl',country:'Sweden'},
+					    {name:'Margareth',country:'England'},
+					    {name:'Hege',country:'Norway'},
+					    {name:'Joe',country:'Denmark'},
+					    {name:'Gustav',country:'Sweden'},
+					    {name:'Birgit',country:'Denmark'},
+					    {name:'Mary',country:'England'},
+					    {name:'Kai',country:'Norway'}
+		               ];
+		$scope.orderByMe = function(x){
+			$scope.myOrderBy = x;
+		}
+	});
+</script>
+</XMP>
+<div ng-app="myApp" ng-controller="nameCtrl">
+	<table border="1" width="100%">
+		<tr>
+			<th ng-click = "orderByMe('name')">Name - click(Name 정렬) </th>
+			<th ng-click = "orderByMe('country')">Country - click(Country 정렬) </th>
+		</tr>
+		<tr ng-repeat=" x in names | orderBy:myOrderBy">
+			<td>{{x.name}}</td>
+			<td>{{x.country}}</td>
+		</tr>
+	</table>
+</div>
+<script type="text/javascript">
+	angular.module('myApp', []).controller('nameCtrl', function($scope){
+		$scope.names =[
+					    {name:'Jani',country:'Norway'},
+					    {name:'Carl',country:'Sweden'},
+					    {name:'Margareth',country:'England'},
+					    {name:'Hege',country:'Norway'},
+					    {name:'Joe',country:'Denmark'},
+					    {name:'Gustav',country:'Sweden'},
+					    {name:'Birgit',country:'Denmark'},
+					    {name:'Mary',country:'England'},
+					    {name:'Kai',country:'Norway'}
+		               ];
+		$scope.orderByMe = function(x){
+			$scope.myOrderBy = x;
+		}
+	});
+</script>
+예제 설명 :<br>
+테이블 헤더에 ng-click을 추가해서, 배열의 정렬 기준을 변경할 수 있다. 
+<br>
+<a href="10.filtersExample6.html">이전</a>
+<a href="10.filtersExample8.html">다음</a>
+</body>
+</html> 
