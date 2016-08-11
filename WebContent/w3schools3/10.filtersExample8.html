@@ -10,24 +10,29 @@
 <h1>AngularJS Example</h1>
 <h3>Custom Filters</h3>
 <XMP>
-<div ng-app="skApp" ng-controller="skCtrl">
-	<p> 글자 입력 : </p> <input type="text" ng-model="test">
-	<ul>
-		<li ng-repeat = "x in names | filter:test">
-			{{ x }}
-		</li>
-	</ul>
-</div>
+<ul ng-app="myApp" ng-controller="namesCtrl">
+	<li ng-repeat = "x in names">
+		{{x | myFormat}}
+	</li>
+</ul>
+
 <script type="text/javascript">
-angular.module('skApp', []).controller('skCtrl', function($scope){
-	$scope.names = [
-					'이선구',
-					'홍길동',
-					'전우치',
-					'이순신',
-					'세종대왕',
-					'유관순'
-	                ];
+var app = angular.module('myApp',[]);
+app.filter('myFormat', function(){
+	return function(x){
+		var i, c, txt = "";
+		for(i = 0; i < x.length; i++){
+			c = x[i];
+			if(i % 2 == 0){
+				c = c.toUpperCase();
+			}
+			txt += c;
+		}
+		return txt;
+	};
+});
+app.controller('namesCtrl', function($scope) {
+    $scope.names = ['Jani', 'Carl', 'Margareth', 'Hege', 'Joe', 'Gustav', 'Birgit', 'Mary', 'Kai'];
 });
 </script>
 </XMP>
