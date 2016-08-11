@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- <script src="../WEB-INF/lib/angular.min.js"></script> -->
+</head>
+<body>
+<h1>AngularJS Example</h1>
+<h3>Why use Services?</h3>
+<XMP>
+
+</XMP>
+<div ng-app="myApp" ng-controller="myCtrl">
+	<p>The url of this page is : </p>
+	<h3>{{myUrl}}</h3>
+</div>
+<script type="text/javascript">
+	var app = angular.module('myApp',[]);
+	app.controller('myCtrl', function($scope, $location){
+		$scope.myUrl = $location.absUrl();
+	});
+</script>
+예제 설명 :<br>
+$location 서비스 같은 다양한 서비스는 dom에 만들어진 객체를 사용할 수 있을것으로 보인다. <br>
+
+<br>
+<a href="11.servicesExample.html">이전</a>
+<a href="11.servicesExample3.html">다음</a>
+</body>
+</html> 

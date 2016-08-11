@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- <script src="../WEB-INF/lib/angular.min.js"></script> -->
+</head>
+<body>
+<h1>AngularJS Example</h1>
+<h3>What is a Service?</h3>
+<XMP>
+<div ng-app="myApp" ng-controller="myCtrl">
+	<p>The url of this page is : </p>
+	<h3>{{myUrl}}</h3>
+</div>
+<script type="text/javascript">
+	var app = angular.module('myApp',[]);
+	app.controller('myCtrl', function($scope, $location){
+		$scope.myUrl = $location.absUrl();
+	});
+</script>
+</XMP>
+<div ng-app="myApp" ng-controller="myCtrl">
+	<p>The url of this page is : </p>
+	<h3>{{myUrl}}</h3>
+</div>
+<script type="text/javascript">
+	var app = angular.module('myApp',[]);
+	app.controller('myCtrl', function($scope, $location){
+		$scope.myUrl = $location.absUrl();
+	});
+</script>
+예제 설명 :<br>
+앵귤라에서  서비스는 함수이거나 객체이다. 앵귤러 어플리케이션에 한정되어 사용할 수 있다.<br>
+앵귤러는 약 30개의 내장 서비스를 제공한다. 그중 하나는 $location 서비스이다.<br>
+$location 서비스는 현재 웹페이지의 주소에 관한 정보를 리턴하는 메소드이다.<br>
+$location 서비스는 컨트롤러의 인자로 전달한다. 그러면 컨트롤러에서 서비스를 사용할 수 있다. 그렇게 의존성을 정의한다.<br>
+<br>
+<a href="11.services.html">이전</a>
+<a href="11.servicesExample2.html">다음</a>
+</body>
+</html> 
