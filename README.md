@@ -31,3 +31,71 @@ datepicker 예제 url - http://leeskhome.iptime.org:8080/WEB_Study_angularJS/ang
 
 ## 2016 - 08 - 11
 #### 개발하다가, 앵귤러의 기본적인부분을 너무 몰라 다시 w3schools 예제를 시작한다.
+
+
+2017 05 29 angular.js remind
+
+AngularJS
+
+특징
+ - js로 만든 client MVC/MVVM 프레임워크
+ - spa[싱글 페이지 어플리케이션] 
+
+MVC - 프로그래밍 언어에서 어플리케이션/소프트웨어의 구조를 잡거나 아키텍처
+
+를 정의 하는 방법
+
+M[모델] - json, dto, vo등
+
+V[뷰] - html을 렌더링된 결과
+
+C[컨트롤러] - 서버에서 뷰로 접근하는 일종의 통로
+
+MVVM - 모델-뷰-뷰-모델 : angular의 양방향 데이터 바인딩, 컨트롤러 없어도 
+
+됨
+
+angular 로딩 순서
+
+1. 브라우저가 html 로딩
+2. angular.js 로딩
+3. dom content loaded event 대기
+4. ng-app 지시자 find
+5. dependency injection을 위한 $injector 생성
+6. 루트 스코프 생성
+7. ng-app을 기준으로 하위 dom을 컴파일 하고 rootscope와 링크
+
+사용법
+- ng-app 지시어 추가
+- no-model 지시어 추가
+
+angularJS 디버킹 기능 - 크롬 Batarang
+
+angular 기본개념
+
+1. scope
+ - scope는 모델 변경을 감지하고 표현하기 위한 책임이 있다.
+ - scope는 dom 구조와 가깝게 하이어라키 구조를 갖는다.
+
+2. model 
+ - 화면에서 보여지는 데이터를 가지고 있는 js 객체
+ - scope는 항상 모델을 참조
+
+3. view
+ - 템플릿 스트링과 모델을 합쳐 html이 렌더링 되고 doe으로 해석되어 브라우
+
+져에 나타난다.
+ - angular는 템플릿이 html이어서 바로 dom으로 해석되고, dom안에 directive
+
+가 엔진인 $compile 지시어를 통해 $watch를 설정하고 모델의 변경을 계속 감지
+ - view는 템플릿으로 scope의 투영체
+ - scope는 모델과 뷰를 연결, controller로 이벤트를 보낸다.
+
+4. controller
+ - controller는 view 뒤에 반드시 수행
+ - controller는 모델 생성, 콜백 메소드를 가지고 view 퍼블리싱
+ - controller 자바스크립트 행위 정의
+
+5. 디렉티브(directives) 지시어
+ - 지시어는 html을 확장하여 주고 행위를 일으키는 주체
+ - 
